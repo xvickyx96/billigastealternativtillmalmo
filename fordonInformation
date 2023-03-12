@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+
+public class fordonInformation {
+    public void skrivUt() {
+        ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
+        Car car1 = new Car("BMW", "X5", 250, 2021, 4, 10.0f, 250);
+        vehicles.add(car1);
+
+        Truck truck1 = new Truck("Scania", "R450", 90, 2015, 2, 40, 35.0f, 90);
+        vehicles.add(truck1);
+
+        Motorcycle motorcycle1 = new Motorcycle("Harley-Davidson", "Sportster", 200, 2019, false, 5.0f, 200);
+        vehicles.add(motorcycle1);
+        int travelDistance = 200;
+        float fuelPrice = 19.42f;
+
+        System.out.println("Distance to travel: "+ travelDistance +" km");
+        System.out.println("Fuel price: "+fuelPrice +" kr/l");
+        System.out.println();
+        for(
+            Vehicle v :vehicles)
+
+            {
+                System.out.println(v.getBrand() + " " + v.getModel() + " (" + v.getYear() + ")");
+                System.out.println("Max speed: " + v.getSpeed() + " km/h");
+                System.out.println("Fuel Consumption: " + v.getFuelConsumption() + " l/100km");
+
+                if (v instanceof Car) {
+                    System.out.println("Door count: " + ((Car) v).getDoors());
+                }
+                else if (v instanceof Motorcycle) {
+                    System.out.println("Has windshield: " + ((Motorcycle) v).getWindShield());
+                }
+                else if (v instanceof Truck) {
+                    System.out.println("Capacity: " + ((Truck) v).getCapacity() + " tons");
+                    System.out.println("Door count: " + ((Truck) v).getDoors());
+                }
+
+                System.out.println("Travel distance: " + travelDistance + " km");
+                System.out.println("Fuel needed: " + v.getFuelConsumption() * 2 + " l");
+                System.out.println("Price: " + v.getFuelConsumption() * 2 * fuelPrice + " kr");
+
+
+
+                System.out.println();
+            }
+
+            float cheapestPrice = Float.MAX_VALUE;
+            Vehicle cheapestVehicle = null;
+
+        for(
+            Vehicle v :vehicles)
+
+            {
+                float fuelNeeded = v.getFuelConsumption() * 2;
+                float price = fuelNeeded * fuelPrice;
+
+                if (price < cheapestPrice) {
+                    cheapestPrice = price;
+                    cheapestVehicle = v;
+                }
+            }
+
+        System.out.println(cheapestVehicle.getBrand()+" "+cheapestVehicle.getModel()+" ("+cheapestVehicle.getYear()+") är billigast, den kostar bara "+cheapestPrice +" kronor per sträcka.");
+
+    }
+}
