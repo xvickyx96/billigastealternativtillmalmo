@@ -1,0 +1,34 @@
+class Truck extends Vehicle {
+    public int doors;
+    private int capacity;
+    private float fuelConsumption;
+    private int maxSpeed;
+
+    public Truck(String brand, String model, int speed, int year, int doors, int capacity, float fuelConsumption, int maxSpeed) {
+        super(brand, model, speed, year);
+        this.doors = doors;
+        this.capacity = capacity;
+        this.fuelConsumption = fuelConsumption;
+        this.maxSpeed = maxSpeed;
+    }
+
+    public int getDoors() {
+
+        return doors;
+    }
+
+    public int getCapacity() {
+
+        return capacity;
+    }
+
+    @Override
+    public float getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+}
