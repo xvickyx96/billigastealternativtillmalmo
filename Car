@@ -1,0 +1,28 @@
+class Car extends Vehicle {
+    private String brand;
+    private int doors;
+    private float fuelConsumption;
+    private int maxSpeed;
+    public Car(String brand, String model, int speed, int year, int doors, float fuelConsumption, int maxSpeed) {
+        super(brand, model, speed, year);
+        this.brand = brand;
+        this.doors = doors;
+        this.fuelConsumption = fuelConsumption;
+        this.maxSpeed = maxSpeed;
+    }
+
+    public int getDoors() {
+
+        return doors;
+    }
+    @Override
+    public float getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+}
