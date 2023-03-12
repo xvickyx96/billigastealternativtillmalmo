@@ -1,0 +1,26 @@
+class Motorcycle extends Vehicle {
+    private boolean windShield;
+    private float fuelConsumption;
+    private int maxSpeed;
+    public Motorcycle(String brand, String model, int speed, int year, boolean windShield, float fuelConsumption, int maxSpeed) {
+        super(brand, model, speed, year);
+        this.windShield = windShield;
+        this.fuelConsumption = fuelConsumption;
+        this.maxSpeed = maxSpeed;
+    }
+
+    public boolean getWindShield() {
+
+        return windShield;
+    }
+    @Override
+    public float getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+}
